@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
+import Note from '../components/note/note';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="frontend" />
+      <Note />
     </div>
   );
 }
