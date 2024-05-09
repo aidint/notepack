@@ -1,9 +1,9 @@
-import Note from '../components/note/note';
+import { NoteView } from '../components/noteview/noteview';
 
 export function App() {
   return (
     <div>
-      <Note />
+    <NoteView />
     </div>
   );
 }
