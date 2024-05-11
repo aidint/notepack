@@ -2,7 +2,7 @@ import { NoteView } from '../components/noteview/noteview';
 
 export function App() {
   return (
-    <div>
+    <div className="w-max overflow-scroll">
     <NoteView />
     </div>
   );
