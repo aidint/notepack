@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { NoteViewHorizontal } from './noteview_horizontal';
+import { HorizontalStack } from './HorizontalStack';
 
-export function NoteView() {
+export function VerticalStack() {
   const [noteNumber, setNoteNumber] = useState(0)
   return (
     <div>
-    {[...Array(noteNumber)].map(()=> <NoteViewHorizontal />)
+    {[...Array(noteNumber).keys()].map(number => <HorizontalStack rowNumber={number} key={`HS-${number}`}/>)
     }
       <button className="bg-yellow-100 hover:bg-yellow-200 font-semibold py-2 px-4 rounded shadow block" onClick={() => setNoteNumber(noteNumber + 1)}>
         Click Me!
@@ -14,5 +14,5 @@ export function NoteView() {
   );
 }
 
-export default NoteView;
+export default VerticalStack;
 

@@ -1,9 +1,9 @@
-import { NoteView } from '../components/noteview/noteview';
+import { VerticalStack } from '../components/note/VerticalStack';
 
 export function App() {
   return (
-    <div className="w-max overflow-scroll">
-    <NoteView />
+    <div className="w-max">
+      <VerticalStack />
     </div>
   );
 }

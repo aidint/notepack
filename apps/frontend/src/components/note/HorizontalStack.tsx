@@ -1,13 +1,16 @@
 import { useState } from 'react';
-import { Note } from './note';
+import { Note } from './Note';
 
-export function NoteViewHorizontal() {
+interface HorizontalStackProps {
+  rowNumber: number;
+}
+export function HorizontalStack(props: HorizontalStackProps) {
   const [noteNumber, setNoteNumber] = useState(1);
 
   return (
     <div className="block">
-      {[...Array(noteNumber)].map(() => (
-        <Note />
+      {[...Array(noteNumber).keys()].map(columnNumber => (
+        <Note key={`Note${props.rowNumber}-${columnNumber}`}/>
       ))}
       <button
         className="bg-gray-100 hover:bg-gray-200 font-semibold py-2 px-4 rounded shadow"
@@ -19,4 +22,4 @@ export function NoteViewHorizontal() {
   );
 }
 
-export default NoteViewHorizontal;
+export default HorizontalStack;
