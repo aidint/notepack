@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --note-size-x: 300px;
-  --note-size-y: 100px;
+  --note-size-x: calc(300rem / 16);
+  --note-size-y: calc(100rem / 16);
 }
