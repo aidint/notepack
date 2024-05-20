@@ -8,12 +8,12 @@ export function HorizontalStack(props: HorizontalStackProps) {
   const [noteNumber, setNoteNumber] = useState(1);
 
   return (
-    <div className="block">
+    <div className="flex flex-row gap-3">
       {[...Array(noteNumber).keys()].map(columnNumber => (
-        <Note key={`Note${props.rowNumber}-${columnNumber}`}/>
+        <Note key={`Note${props.rowNumber}-${columnNumber}`} id={`Note${props.rowNumber}-${columnNumber}`}/>
       ))}
       <button
-        className="bg-gray-100 hover:bg-gray-200 font-semibold py-2 px-4 rounded shadow"
+        className="bg-gray-100 hover:bg-gray-200 font-semibold gap-1 rounded shadow"
         onClick={() => setNoteNumber(noteNumber + 1)}
       >
         Click Me!
