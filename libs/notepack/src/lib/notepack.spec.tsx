@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import NewComponent from './new-component';
+import Notepack from './notepack';
 
-describe('NewComponent', () => {
+describe('Notepack', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<NewComponent />);
+    const { baseElement } = render(<Notepack />);
     expect(baseElement).toBeTruthy();
   });
 });

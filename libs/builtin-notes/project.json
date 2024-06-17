@@ -1,9 +1,0 @@
-{
-  "name": "builtin-notes",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/builtin-notes/src",
-  "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project builtin-notes --web",
-  "targets": {}
-}
