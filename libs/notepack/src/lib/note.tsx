@@ -3,15 +3,15 @@ export type NoteFunction = (identifier: string, ...args: any[]) => JSX.Element;
 export interface NoteProps {
   identifier: string;
   noteFunction: NoteFunction;
-  noteArgs:  { [key: string]: any };
+  noteArgs?: { [key: string]: any };
+  className?: string;
 }
 
-
-export function Note(props: NoteProps) {
-  const note = props.noteFunction(props.identifier, props.noteArgs);
-  return (
-    <div>
-      {note}
-    </div>
-  )
+interface Note {
+  [key: string]: {
+    fn: NoteFunction;
+    noteArgs?: { [key: string]: any };
+    className?: string;
+  };
 }
+
