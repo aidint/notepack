@@ -1,17 +1,12 @@
-export type NoteFunction = (identifier: string, ...args: any[]) => JSX.Element;
+export type NoteFunction = (params: {
+  identifier: string;
+  config: {
+    [key: string]: any;
+  };
+}) => JSX.Element;
 
 export interface NoteProps {
   identifier: string;
   noteFunction: NoteFunction;
-  noteArgs?: { [key: string]: any };
-  className?: string;
+  config?: { [key: string]: any };
 }
-
-interface Note {
-  [key: string]: {
-    fn: NoteFunction;
-    noteArgs?: { [key: string]: any };
-    className?: string;
-  };
-}
-
