@@ -2,7 +2,7 @@ import { NoteProps, NoteFunction } from './note';
 
 export type NotepackFunction = (params: {
   notes: NoteProps[];
-  configs?: {
+  config?: {
     [key: string]: any;
   };
 }) => JSX.Element;
@@ -16,7 +16,7 @@ export interface Pack {
 
 export interface NotepackProps {
   scope: string;
-  notepackFunction: (notes: NoteProps[], ...args: any) => JSX.Element;
+  notepackFunction: NotepackFunction;
   notes: Pack;
   config?: { [key: string]: any };
 }
@@ -38,7 +38,7 @@ export function Notepack(props: NotepackProps) {
 
   return (
     <div className={props.config?.className || ''}>
-      {props.notepackFunction({ ...notes })}
+      {props.notepackFunction({ notes: notes, config: props.config})}
     </div>
   );
 }
